@@ -14,6 +14,8 @@ html {
 body {
     font-family: var(--primary-font);
     font-size: 1.6rem;
+    height: 2000px;
+    background-color: #000;
 }
 
 a {
@@ -31,7 +33,8 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 93px;
-    background-image: linear-gradient(to right, #00000000, #6750a555);
+    background-image: linear-gradient(to right, #00000000, #6750a583);
+    z-index: 1000;
 }
 
 .nav__list {
@@ -45,7 +48,7 @@ header {
 }
 
 .nav__link {
-    color: #a1b1cb;
+    color: #8b98ad;
     transition: 0.5s;
     padding: 25px;
 }
@@ -118,4 +121,96 @@ header {
 
 .header-side--right {
     display: flex;
+}
+
+.slider {
+    width: 100%;
+    height: 100vh;
+    background-color: #333;
+}
+
+.slider-item__img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    /* user-select: none; */
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider-main {
+    display: flex;
+    position: relative;
+    transition: 1s;
+}
+
+.slider-item {
+    position: relative;
+    flex: 1 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-info {
+    position: absolute;
+    bottom: 150px;
+    left: 100px;
+}
+
+.slider-film__name {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.watchBtn,
+.addListBtn {
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #fb5327;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.slider__swipe i {
+    color: #fff;
+    font-size: 30px;
+}
+
+.slider__swipe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 40px;
+    height: 120px;
+    background-color: #79787849;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.slider__swipe:hover {
+    background-color: #555555bc;
+}
+
+.slider__swipe-left {
+    border-radius: 0 10px 10px 0;
+    left: 0;
+}
+
+.slider__swipe-right {
+    right: 0;
+    border-radius: 10px 0 0 10px;
 }
