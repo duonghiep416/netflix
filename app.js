@@ -1,6 +1,6 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
+const header = $("header");
 const swipeLeft = $(".slider__swipe-left");
 const swipeRight = $(".slider__swipe-right");
 const slideMain = $(".slider-main");
@@ -30,30 +30,45 @@ const sliderInfos = [
     },
 ];
 
+const mainContent = [];
+
 function render() {
+    // RENDER THE SLIDER
     sliderInfos.forEach((sliderInfo) => {
         console.log(sliderInfo.src);
         slideMain.insertAdjacentHTML(
             "beforeend",
             `<div class="slider-item">
-        <img
-            src=${sliderInfo.src}
-            alt=""
-            class="slider-item__img"
-        />
-        <div class="slider-info">
-            <p class="slider-film__name">
-                ${sliderInfo.name}
-            </p>
-            <button class="btn watchBtn">Watch</button>
-            <button class="btn addListBtn">
-                My list
-                <i class="ri-add-line"></i>
-            </button>
-        </div>
-    </div>`
+                <img
+                    src=${sliderInfo.src}
+                    alt=""
+                    class="slider-item__img"
+                />
+                <div class="slider-info">
+                    <p class="slider-film__name">
+                        ${sliderInfo.name}
+                    </p>
+                    <button class="btn watchBtn">Watch</button>
+                    <button class="btn addListBtn">
+                        My list
+                        <i class="ri-add-line"></i>
+                    </button>
+                </div>
+            </div>`
         );
     });
+}
+
+window.onscroll = function () {
+    srcoll();
+};
+function srcoll() {
+    // SCROLL HEADER
+    if (document.documentElement.scrollTop > 30) {
+        header.classList.add("header-scroll");
+    } else {
+        header.classList.remove("header-scroll");
+    }
 }
 
 function active() {

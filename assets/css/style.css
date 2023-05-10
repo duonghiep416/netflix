@@ -33,8 +33,13 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 93px;
-    background-image: linear-gradient(to right, #00000000, #6750a583);
+    background-image: linear-gradient(to right, #00000000, #6750a500);
     z-index: 1000;
+    transition: 1s;
+}
+
+.header-scroll {
+    background-image: linear-gradient(to right, #00000044, #6750a584);
 }
 
 .nav__list {
