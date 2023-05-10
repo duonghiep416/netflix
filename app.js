@@ -24,6 +24,10 @@ const sliderInfos = [
         name: "Avengers Endgame",
         src: "./assets/img/endgame.png",
     },
+    {
+        name: "Wednesday",
+        src: "./assets/img/wednesday.jpg",
+    },
 ];
 
 function render() {
@@ -81,8 +85,10 @@ function active() {
             index++;
         }
     }
+    setInterval(function () {
+        handleChangeSlide(-1);
+    }, 5000);
 }
-
 function start() {
     render();
     active();
